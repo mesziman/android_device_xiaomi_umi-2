@@ -170,7 +170,8 @@ PRODUCT_PACKAGES += \
     libcamera2ndk_vendor \
     Snap \
     vendor.qti.hardware.camera.device@1.0.vendor \
-    vendor.qti.hardware.camera.postproc@1.0.vendor
+    vendor.qti.hardware.camera.postproc@1.0.vendor \
+    vendor.xiaomi.hardware.motor@1.0.vendor
 
 # Context Hub
 PRODUCT_PACKAGES += \
