@@ -638,7 +638,6 @@ vendor/lib64/hw/fingerprint.goodix_fod6.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/libgf_hal6.so
 vendor/lib64/vendor.goodix.hardware.biometrics.fingerprint@2.1.so
-vendor/lib64/vendor.xiaomi.hardware.fingerprintextension@1.0.so
 
 # FM
 vendor/lib/vendor.qti.hardware.fm@1.0.so
@@ -1353,7 +1352,6 @@ vendor/lib64/libtime_genoff.so
 vendor/bin/hw/vendor.xiaomi.hardware.touchfeature@1.0-service
 vendor/etc/init/vendor.xiaomi.hardware.touchfeature@1.0-service.rc
 vendor/lib64/hw/vendor.xiaomi.hardware.touchfeature@1.0-impl.so
-vendor/lib64/vendor.xiaomi.hardware.touchfeature@1.0.so
 
 # Trusted User Interface
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
