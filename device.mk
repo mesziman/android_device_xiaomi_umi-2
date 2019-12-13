@@ -96,7 +96,7 @@ PRODUCT_PACKAGES += \
 
 # ANT+
 PRODUCT_PACKAGES += \
-    AntHalService
+    AntHalService-Soong
 
 # Atrace
 PRODUCT_PACKAGES += \
