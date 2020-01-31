@@ -147,6 +147,7 @@ TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Power
+TARGET_POWER_SET_FEATURE_LIB := libpower_feature.xiaomi_lmi
 TARGET_USES_INTERACTION_BOOST := true
 
 # QCOM
