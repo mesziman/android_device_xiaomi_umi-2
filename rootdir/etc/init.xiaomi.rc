@@ -222,7 +222,7 @@ service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
     interface android.hardware.audio@4.0::IDevicesFactory default
     interface android.hardware.audio@2.0::IDevicesFactory default
 
-service vendor.power-hal-1-2 /vendor/bin/hw/android.hardware.power@1.2-service-qti
+service vendor.power /vendor/bin/hw/android.hardware.power-service-qti
     override
     class hal
     user system
