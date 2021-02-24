@@ -222,6 +222,12 @@ service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
     interface android.hardware.audio@4.0::IDevicesFactory default
     interface android.hardware.audio@2.0::IDevicesFactory default
 
+service vendor.power-hal-1-2 /vendor/bin/hw/android.hardware.power@1.2-service-qti
+    override
+    class hal
+    user system
+    group system input
+
 on property:persist.vendor.sys.fp.fod.large_field=1
     write sys/bus/i2c/devices/3-0049/fod_area 1
 
