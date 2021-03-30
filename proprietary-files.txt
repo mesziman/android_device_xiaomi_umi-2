@@ -1290,7 +1290,7 @@ vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1.so
 
 # Snapdragon Computer Vision Engine
 vendor/lib/libfastcvdsp_stub.so
-vendor/lib/libfastcvopt.so
+-vendor/lib/libfastcvopt.so
 vendor/lib/libscveBlobDescriptor_stub.so
 vendor/lib/libscveBlobDescriptor.so
 vendor/lib/libscveCommon_stub.so
@@ -1302,7 +1302,7 @@ vendor/lib/libscveObjectTracker.so
 vendor/lib/libscvePanorama_lite.so
 vendor/lib/libscvePanorama.so
 vendor/lib64/libfastcvdsp_stub.so
-vendor/lib64/libfastcvopt.so
+-vendor/lib64/libfastcvopt.so
 vendor/lib64/libscveBlobDescriptor_stub.so
 vendor/lib64/libscveBlobDescriptor.so
 vendor/lib64/libscveCommon_stub.so
