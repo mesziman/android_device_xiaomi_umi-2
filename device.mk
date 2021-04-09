@@ -402,9 +402,7 @@ PRODUCT_BOOT_JARS += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-impl \
-    android.hardware.thermal@1.0-service \
-    thermal.kona
+    android.hardware.thermal@2.0-service.qti
 
 # Touchscreen
 PRODUCT_PACKAGES += \
