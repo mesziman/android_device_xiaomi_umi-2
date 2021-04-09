@@ -3,10 +3,8 @@ aaudio.hw_burst_min_usec=2000
 aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=1
 af.fast_track_multiplier=1
-audio.deep_buffer.media=true
 audio.offload.buffer.size.kb=32
 audio.offload.gapless.enabled=true
-audio.offload.video=true
 persist.vendor.audio.ambisonic.auto.profile=false
 persist.vendor.audio.ambisonic.capture=false
 persist.vendor.audio.apptype.multirec.enabled=false
@@ -20,7 +18,6 @@ persist.vendor.audio.hifi=false
 persist.vendor.audio.ras.enabled=false
 persist.vendor.audio.spv3.enable=true
 persist.vendor.audio.voicecall.speaker.stereo=true
-ro.af.client_heap_size_kbyte=7168
 ro.config.vc_call_vol_steps=11
 ro.vendor.audio.sdk.fluencetype=fluence
 ro.vendor.audio.sdk.ssr=false
@@ -87,10 +84,12 @@ vendor.audio.safx.pbe.enabled=false
 vendor.audio.tunnel.encode=false
 vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
+vendor.audio.use.sw.mpegh.decoder=true
 vendor.audio.volume.headset.gain.depcal=true
 vendor.voice.path.for.pcm.voip=true
 
 # Bluetooth
+persist.vendor.qcom.bluetooth.soc=hastings
 vendor.bluetooth.soc=hastings
 vendor.qcom.bluetooth.soc=hastings
 
@@ -109,17 +108,14 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 # Display
 debug.egl.hw=0
 debug.mdpcomp.logs=0
-debug.sf.early_app_phase_offset_ns=500000
-debug.sf.early_gl_app_phase_offset_ns=15000000
-debug.sf.early_gl_phase_offset_ns=3000000
-debug.sf.early_phase_offset_ns=500000
+debug.sf.enable_advanced_sf_phase_offset=1
 debug.sf.enable_gl_backpressure=1
-debug.sf.high_fps_early_gl_phase_offset_ns=6500000
-debug.sf.high_fps_early_phase_offset_ns=6100000
+debug.sf.high_fps_early_gl_phase_offset_ns=-4000000
+debug.sf.high_fps_early_phase_offset_ns=-4000000
 debug.sf.high_fps_late_app_phase_offset_ns=1000000
+debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
 debug.sf.hw=0
 debug.sf.latch_unsignaled=1
-debug.sf.phase_offset_threshold_for_next_vsync_ns=6100000
 persist.demo.hdmirotationlock=false
 persist.sys.force_sw_gles=1
 persist.sys.sf.color_mode=0
@@ -127,6 +123,7 @@ persist.sys.sf.color_saturation=1.0
 ro.opengles.version=196610
 ro.vendor.display.sensortype=2
 vendor.display.comp_mask=2
+vendor.display.disable_excl_rect_partial_fb=1
 vendor.display.disable_excl_rect=0
 vendor.display.disable_hw_recovery_dump=1
 vendor.display.disable_offline_rotator=1
@@ -134,7 +131,7 @@ vendor.display.disable_scaler=0
 vendor.display.enable_async_powermode=0
 vendor.display.enable_optimize_refresh=1
 vendor.display.enable_posted_start_dyn=1
-vendor.display.use_layer_ext=1
+vendor.display.use_layer_ext=0
 vendor.display.use_smooth_motion=0
 vendor.gralloc.disable_ubwc=0
 
@@ -142,6 +139,7 @@ vendor.gralloc.disable_ubwc=0
 persist.vendor.dpm.feature=1
 persist.vendor.dpm.loglevel=0
 persist.vendor.dpm.nsrm.bkg.evt=3955
+persist.vendor.dpmhalservice.enable=1
 
 # DRM
 drm.service.enabled=true
@@ -161,7 +159,6 @@ ro.lmk.kill_timeout_ms=15
 
 # Media
 debug.stagefright.ccodec=1
-debug.stagefright.omx_default_rank.sw-audio=1
 debug.stagefright.omx_default_rank=0
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 media.stagefright.enable-aac=true
@@ -177,6 +174,9 @@ ro.netflix.bsp_rev=Q8250-19134-1
 
 # Netmgr
 persist.data.df.dev_name=rmnet_usb0
+persist.data.netmgrd.qos.enable=true
+persist.data.wda.enable=true
+persist.rmnet.data.enable=true
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
 ro.vendor.use_data_netmgrd=true
@@ -217,7 +217,11 @@ persist.vendor.radio.procedure_bytes=SKIP
 persist.vendor.radio.rat_on=combine
 persist.vendor.radio.redir_party_num=1
 persist.vendor.radio.sib16_support=1
-ril.subscription.types=RUIM
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
-ro.telephony.default_network=33,33
+ro.telephony.default_cdma_sub=0
+ro.vendor.radio.5g=3
 telephony.lteOnCdmaDevice=1
+
+# WiFi Display
+persist.debug.wfd.enable=1
+persist.sys.wfd.virtual=0
