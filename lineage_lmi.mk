@@ -25,4 +25,4 @@ PRODUCT_CHARACTERISTICS := nosdcard
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-BUILD_FINGERPRINT := Redmi/lmi/lmi:10/QKQ1.191117.002/V12.0.8.0.QJKCNXM:user/release-keys
+BUILD_FINGERPRINT := Redmi/lmi/lmi:11/RKQ1.200826.002/V12.2.3.0.RJKCNXM:user/release-keys
