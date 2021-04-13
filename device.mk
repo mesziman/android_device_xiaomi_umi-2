@@ -157,7 +157,8 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl \
-    vendor.qti.hardware.btconfigstore@1.0.vendor
+    vendor.qti.hardware.btconfigstore@1.0.vendor \
+    vendor.qti.hardware.btconfigstore@2.0.vendor
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -169,11 +170,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.postproc@1.0.vendor \
     vendor.xiaomi.hardware.motor@1.0.vendor
 
-# Context Hub
-PRODUCT_PACKAGES += \
-    android.hardware.contexthub@1.0-impl.generic \
-    android.hardware.contexthub@1.0-service
-
 # Component overrides
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
@@ -181,30 +177,36 @@ PRODUCT_COPY_FILES += \
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
+    android.hardware.graphics.mapper@4.0-impl-qti-display \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     gralloc.kona \
-    libdisplayconfig.vendor \
+    libdisplayconfig.qti \
+    libdisplayconfig.qti.vendor \
     libqdMetaData \
     libgui_vendor \
     libtinyxml \
     libvulkan \
     memtrack.kona \
-    vendor.display.config@1.15.vendor \
+    vendor.display.config@1.16.vendor \
+    vendor.display.config@1.5 \
+    vendor.display.config@2.0 \
+    vendor.display.config@2.0.vendor \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.allocator@1.0.vendor \
     vendor.qti.hardware.display.allocator@3.0.vendor \
+    vendor.qti.hardware.display.allocator@4.0.vendor \
     vendor.qti.hardware.display.composer@1.0.vendor \
     vendor.qti.hardware.display.composer@2.0.vendor \
+    vendor.qti.hardware.display.composer@3.0.vendor \
     vendor.qti.hardware.display.mapper@1.1.vendor \
     vendor.qti.hardware.display.mapper@2.0.vendor \
     vendor.qti.hardware.display.mapper@3.0.vendor \
+    vendor.qti.hardware.display.mapper@4.0.vendor \
     vendor.qti.hardware.display.mapperextensions@1.1.vendor
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service \
     android.hardware.drm@1.3-service.clearkey
 
 # Fingerprint
@@ -234,7 +236,8 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-    android.hidl.base@1.0_system
+    android.hidl.base@1.0_system \
+    libhwbinder.vendor
 
 # IFAA manager
 PRODUCT_PACKAGES += \
@@ -266,6 +269,10 @@ PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sdm
 
 # Media
+PRODUCT_PACKAGES += \
+    libavservices_minijail \
+    libavservices_minijail.vendor
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
     $(LOCAL_PATH)/media/media_codecs_kona.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_kona.xml \
@@ -333,6 +340,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     XiaomiParts
 
+# Perf
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.perf@2.2.vendor
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
@@ -372,7 +383,6 @@ PRODUCT_COPY_FILES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.secure_element@1.0 \
     libprotobuf-cpp-full \
     librmnetctl \
     libxml2
@@ -423,6 +433,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.2-service-qti
 
+# Vendor service manager
+PRODUCT_PACKAGES += \
+    vndservicemanager
+
 # Vibrator
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
@@ -434,6 +448,8 @@ PRODUCT_PACKAGES += \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
     libwpa_client \
+    vendor.qti.hardware.wifi.hostapd@1.2.vendor \
+    vendor.qti.hardware.wifi.supplicant@2.2.vendor \
     WifiResCommon \
     wpa_supplicant \
     wpa_supplicant.conf
@@ -445,7 +461,8 @@ PRODUCT_COPY_FILES += \
 
 # WiFi Display
 PRODUCT_PACKAGES += \
-    libnl
+    libnl \
+    libwfdaac_vendor
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
