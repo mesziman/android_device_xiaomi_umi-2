@@ -23,8 +23,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/xiaomi \
-    vendor/nxp/opensource/sn100x
+    hardware/xiaomi
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
@@ -304,20 +303,12 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.2-service \
     com.android.nfc_extras \
-    com.gsma.services.nfc \
-    com.nxp.nfc.nq \
-    jcos_nq_client \
-    libnqnfc_nci_jni \
-    ls_nq_client \
-    nfc_nci.nqx.default.hw \
-    nqnfcee_access.xml \
-    NQNfcNci \
-    nqnfcse_access.xml \
-    se_nq_extn_client \
+    libchrome.vendor \
+    NfcNci \
     SecureElement \
-    Tag \
-    vendor.nxp.hardware.nfc@1.2-service
+    Tag
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
