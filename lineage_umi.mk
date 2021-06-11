@@ -9,20 +9,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from lmi device
-$(call inherit-product, device/xiaomi/lmi/device.mk)
+$(call inherit-product, device/xiaomi/umi/device.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_lmi
-PRODUCT_DEVICE := lmi
-PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := Redmi K30 Pro
+PRODUCT_NAME := lineage_umi
+PRODUCT_DEVICE := umi
+PRODUCT_BRAND := Xiaomi
+PRODUCT_MODEL := Mi 10
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_CHARACTERISTICS := nosdcard
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-BUILD_FINGERPRINT := Redmi/lmi/lmi:11/RKQ1.200826.002/V12.5.2.0.RJKCNXM:user/release-keys
+BUILD_FINGERPRINT := Xiaomi/umi/umi:11/RKQ1.200826.002/V12.5.4.0.RJBCNXM:user/release-keys

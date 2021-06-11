@@ -15,8 +15,8 @@
 
 cc_binary {
     defaults: ["hidl_defaults"],
-    name: "android.hardware.light@2.0-service.xiaomi_lmi",
-    init_rc: ["android.hardware.light@2.0-service.xiaomi_lmi.rc"],
+    name: "android.hardware.light@2.0-service.xiaomi_umi",
+    init_rc: ["android.hardware.light@2.0-service.xiaomi_umi.rc"],
     srcs: [
         "service.cpp",
         "Light.cpp",

@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/lmi
+DEVICE_PATH := device/xiaomi/umi
 
 # Architecture
 TARGET_ARCH := arm64
@@ -25,7 +25,7 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := kryo385
 TARGET_USES_64_BIT_BINDER := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := lmi,lmipro
+TARGET_OTA_ASSERT_DEVICE := umi
 
 # Build
 BUILD_BROKEN_DUP_RULES := true
@@ -45,7 +45,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 TARGET_KERNEL_ADDITIONAL_FLAGS := DTC_EXT=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8250
-TARGET_KERNEL_CONFIG := vendor/lmi_user_defconfig
+TARGET_KERNEL_CONFIG := vendor/umi_user_defconfig
 
 # Platform
 TARGET_BOARD_PLATFORM := kona
@@ -99,10 +99,6 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
-
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_lmi
-TARGET_RECOVERY_DEVICE_MODULES := libinit_lmi
 
 # Media
 TARGET_USES_ION := true
@@ -206,4 +202,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
-include vendor/xiaomi/lmi/BoardConfigVendor.mk
+include vendor/xiaomi/umi/BoardConfigVendor.mk
