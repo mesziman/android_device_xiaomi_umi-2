@@ -783,6 +783,12 @@ vendor/firmware/a650_zap.b02
 vendor/firmware/a650_zap.elf
 vendor/firmware/a650_zap.mdt
 
+# HotwordEnrollment
+-product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk|aca670c20dfee58a96a471b64ea7d63a0a3fb812
+-product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk|59192e638ea3b13ee9005d730ce269db66a4d10a
+system_ext/framework/com.android.hotwordenrollment.common.util.jar|bef92589e75a6da6043f85f4b9b0e85866429624
+system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml|563a58554d9c0dd0608552b644fbf74519a447bb
+
 # IOP
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
 vendor/etc/init/vendor.qti.hardware.iop@2.0-service.rc
