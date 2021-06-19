@@ -133,11 +133,5 @@ service vendor.nv_mac /vendor/bin/nv_mac
     group system inet net_admin wifi net_raw
     oneshot
 
-service vendor.power /vendor/bin/hw/android.hardware.power-service-qti
-    override
-    class hal
-    user system
-    group system input
-
 on property:persist.vendor.sys.fp.fod.large_field=1
     write sys/bus/i2c/devices/3-0049/fod_area 1
