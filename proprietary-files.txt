@@ -1,4 +1,4 @@
-# All blobs below are extracted - from umi_images_V12.5.4.0.RJBCNXM_20210331.0000.00_11.0_cn, unless pinned
+# All blobs below are extracted - from UMI_V12.5.5.0.RJBCNXM, unless pinned
 
 # ACDB
 vendor/etc/acdbdata/adsp_avs_config.acdb
