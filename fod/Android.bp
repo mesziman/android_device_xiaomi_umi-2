@@ -18,6 +18,7 @@ cc_binary {
     defaults: ["hidl_defaults"],
     name: "vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_umi",
     init_rc: ["vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_umi.rc"],
+    vintf_fragments: ["vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_umi.xml"],
     srcs: [
         "service.cpp",
         "FingerprintInscreen.cpp"
