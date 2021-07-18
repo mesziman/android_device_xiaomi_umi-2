@@ -1,37 +1,54 @@
-# Copyright (c) 2016, 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions are met:
+# modification, are permitted provided that the following conditions are
+# met:
 #     * Redistributions of source code must retain the above copyright
 #       notice, this list of conditions and the following disclaimer.
-#     * Redistributions in binary form must reproduce the above copyright
-#       notice, this list of conditions and the following disclaimer in the
-#       documentation and/or other materials provided with the distribution.
-#     * Neither the name of The Linux Foundation nor
-#       the names of its contributors may be used to endorse or promote
-#       products derived from this software without specific prior written
-#       permission.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
 #
-# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-# IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-# NON-INFRINGEMENT ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
-# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
-# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
-# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
-# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
-# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
 #
 
-on early-init
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_cs35l41 audio_tfa98xx
+import /vendor/etc/init/init.batterysecret.rc
+import /vendor/etc/init/init.mi_thermald.rc
+
+on init
+    chown system system /proc/last_kmsg
+
+    # Mipi Display feature
+    chmod 0777 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dynamic_dsi_clock
+
+    # Allow both charger and hal_light to access panel0 backlight
+    chown system system /sys/class/backlight/panel0-backlight/brightness
 
 on fs
     mkdir /mnt/vendor/persist/audio 0755 system system
+    chmod 644 /mnt/vendor/persist/audio/us_manual_cal
+    mkdir /mnt/vendor/persist/haptics 0755 system system
+    chmod 0644 /mnt/vendor/persist/haptics/vov
+    chown system system /mnt/vendor/persist/haptics/vov
+    chown system system /sys/bus/i2c/drivers/aw8697_haptic/2-005a/vov
+    chmod 644 /mnt/vendor/persist/audio/us_manual_cal
+    mkdir /mnt/vendor/persist/subsys 0770 root system
     mkdir /mnt/vendor/persist/camera 0777 root root
-
     chown system system /dev/tfa_reg
     chown system system /dev/tfa_rw
     chown system system /dev/tfa_rpc
@@ -40,65 +57,23 @@ on fs
     chmod 0660 /dev/tfa_rw
     chmod 0660 /dev/tfa_rpc
     chmod 0660 /dev/tfa_control
-
-    chmod 0644 /mnt/vendor/persist/audio/us_manual_cal
-
     chmod 0666 /dev/xlog
-
-on init
-    # Mipi Display feature
-    chmod 0777 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dynamic_dsi_clock
-
-    # Allow both charger and hal_light to access panel0 backlight
-    chown system system /sys/class/backlight/panel0-backlight/brightness
-
-    chown system camera /dev/ti-drv8846
-    chown system camera /dev/akm09970
-    chmod 0660 /dev/ti-drv8846
-    chmod 0660 /dev/akm09970
+    chown system system /sys/devices/platform/soc/a8c000.i2c/i2c-2/2-005a/custom_wave
+    chmod 0666  /sys/devices/platform/soc/a8c000.i2c/i2c-2/2-005a/custom_wave
 
 on post-fs-data
-    mkdir /data/vendor/mac_addr 0770 system wifi
-    mkdir /data/vendor/nfc 0770 nfc nfc
-
-    chmod 0666 /dev/migt
-    chmod 0777 /sys/module/migt/parameters/boost_policy
-    chmod 0777 /sys/module/migt/parameters/fps_variance_ratio
-    chmod 0777 /sys/module/migt/parameters/migt_ceiling_freq
-    chmod 0777 /sys/module/migt/parameters/migt_freq
-    chmod 0777 /sys/module/migt/parameters/migt_ms
-    chmod 0777 /sys/module/migt/parameters/migt_thresh
-    chmod 0777 /sys/module/migt/parameters/super_task_max_num
-    restorecon /dev/migt
-    restorecon /sys/module/migt/parameters/boost_policy
-    restorecon /sys/module/migt/parameters/fps_variance_ratio
-    restorecon /sys/module/migt/parameters/migt_ceiling_freq
-    restorecon /sys/module/migt/parameters/migt_freq
-    restorecon /sys/module/migt/parameters/migt_ms
-    restorecon /sys/module/migt/parameters/migt_thresh
-    restorecon /sys/module/migt/parameters/super_task_max_num
-
     chmod 0644 /dev/elliptic0
     chmod 0644 /dev/elliptic1
-
     chmod 0660 /dev/ir_spi
     chown system system /dev/ir_spi
+    mkdir /data/vendor/mac_addr 0770 system wifi
+    mkdir /data/vendor/wlan_logs 0777 root shell
+    mkdir /data/vendor/nfc 0770 nfc nfc
 
 on boot
-    chown system system /sys/class/leds/red/brightness
-    chown system system /sys/class/leds/green/brightness
-    chown system system /sys/class/leds/blue/brightness
-    chown system system /sys/class/leds/red-right/brightness
-    chown system system /sys/class/leds/green-right/brightness
-    chown system system /sys/class/leds/blue-right/brightness
-
-    copy /vendor/etc/tunings.txt /mnt/vendor/persist/vpp/tunings.txt
-
-    # Create persist for camera calibration data
-    mkdir /mnt/vendor/persist/camera 0755 system cameraserver
-
     chown system system /sys/class/touch/touch_dev/palm_sensor
-
+    copy /vendor/etc/tunings.txt /mnt/vendor/persist/vpp/tunings.txt
+    mkdir /mnt/vendor/persist/camera 0755 system cameraserver
     chmod 0444 /sys/class/drm/card0-DSI-1/dynamic_fps
     chmod 0444 /sys/class/drm/card0-DSI-1/oled_pmic_id
     chmod 0444 /sys/class/drm/card0-DSI-1/panel_info
@@ -115,17 +90,15 @@ on boot
     chown system system /sys/class/drm/card0-DSI-1/oled_pmic_id
     chown system system /sys/class/drm/card0-DSI-1/panel_info
     chown system system /sys/class/drm/card0-DSI-1/wp_info
+    chown system system /sys/class/backlight/panel0-backlight/brightness_clone
+    chmod 0664 /sys/class/power_supply/battery/dc_thermal_levels
+    chown system system /sys/class/thermal/thermal_message/sconfig
 
 on charger
     mkdir /mnt/vendor/persist
-    chmod 0771 /mnt/vendor/persist
     chown root system /mnt/vendor/persist
+    chmod 0771 /mnt/vendor/persist
     mkdir /mnt/vendor/persist/subsys 0770 root system
-
-service vendor.motor /vendor/bin/hw/vendor.xiaomi.hardware.motor@1.0-service
-    class hal
-    user system
-    group system
 
 service vendor.nv_mac /vendor/bin/nv_mac
     class late_start
