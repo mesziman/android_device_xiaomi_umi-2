@@ -5,8 +5,6 @@ hal_server_domain(hal_lineage_fod_umi, hal_lineage_fod)
 
 init_daemon_domain(hal_lineage_fod_umi)
 
-wakelock_use(hal_lineage_fod_umi)
-
 hal_client_domain(hal_lineage_fod_umi, hal_fingerprint)
 hal_client_domain(hal_lineage_fod_umi, hal_touchfeature)
 
@@ -15,3 +13,5 @@ binder_call(hal_lineage_fod_umi, hal_touchfeature_default)
 
 allow hal_lineage_fod_umi vendor_sysfs_graphics:dir search;
 allow hal_lineage_fod_umi vendor_sysfs_graphics:file rw_file_perms;
+
+allow hal_lineage_fod_umi sysfs_fod:file rw_file_perms;
