@@ -16,7 +16,6 @@
 /dev/goodix_fp                      u:object_r:fingerprint_device:s0
 /dev/ir_spi                         u:object_r:ir_device:s0
 /dev/migt                           u:object_r:migt_device:s0
-/dev/ti-drv8846                     u:object_r:motor_device:s0
 /dev/xiaomi-touch                   u:object_r:touchfeature_device:s0
 /dev/xlog                           u:object_r:audio_device:s0
 
@@ -35,7 +34,6 @@
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service.xiaomi_umi                   u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/android\.hardware\.light@2\.0-service\.xiaomi_umi                                    u:object_r:hal_light_default_exec:s0
 /vendor/bin/hw/vendor\.lineage\.biometrics\.fingerprint\.inscreen@1\.0-service\.xiaomi_umi          u:object_r:hal_lineage_fod_umi_exec:s0
-/vendor/bin/hw/vendor\.xiaomi\.hardware\.motor@1\.0-service                                         u:object_r:hal_motor_default_exec:s0
 /vendor/bin/hw/vendor\.xiaomi\.hardware\.touchfeature@1\.0-service                                  u:object_r:hal_touchfeature_default_exec:s0
 /vendor/bin/mlipayd@1\.1                                                                            u:object_r:hal_mlipay_default_exec:s0
 
@@ -46,10 +44,6 @@
 # This is labeled as public_adsprpcd_file as it needs to be read by apps
 # (e.g. Google Camera App)
 /mnt/vendor/dsp/fastrpc_shell_3                                         u:object_r:public_adsprpcd_file:s0
-
-# LEDs
-/sys/devices/platform/soc/a84000.i2c/i2c-2/2-0064/leds(/.*)?                        u:object_r:sysfs_leds:s0
-/sys/devices/platform/soc/888000.i2c/i2c-6/6-0064/leds(/.*)?                        u:object_r:sysfs_leds:s0
 
 # MAC
 /vendor/bin/nv_mac                  u:object_r:vendor_wcnss_service_exec:s0
