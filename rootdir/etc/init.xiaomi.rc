@@ -118,3 +118,7 @@ service vendor.btmac-sh /vendor/bin/init.mi.btmac.sh
 
 on property:persist.vendor.sys.fp.fod.large_field=1
     write sys/bus/i2c/devices/3-0049/fod_area 1
+
+# initialize powerHAL when boot is completed
+on property:sys.boot_completed=1
+    setprop vendor.powerhal.init 1
