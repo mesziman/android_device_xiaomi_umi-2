@@ -1,0 +1,26 @@
+[
+ {
+   "repository"  : "chaptsand/kernel_xiaomi_sm8250",
+   "target_path" : "kernel/xiaomi/sm8250",
+   "remote"      : "github",
+   "branch"      : "IMMENSITY-X"
+ },
+ {
+   "repository"  : "chaptsand/android_vendor_xiaomi_umi",
+   "target_path" : "vendor/xiaomi/umi",
+   "remote"      : "github",
+   "branch"      : "eleven-plus"
+ },
+ {
+   "repository"  : "LineageOS/android_hardware_xiaomi",
+   "target_path" : "hardware/xiaomi",
+   "remote"      : "github",
+   "branch"      : "lineage-18.1"
+ },
+  {
+   "repository"  : "chaptsand/android_packages_apps_GoogleCameraGo",
+   "target_path" : "packages/apps/GoogleCameraGo",
+   "remote"      : "github",
+   "branch"      : "eleven-plus"
+ }
+]
