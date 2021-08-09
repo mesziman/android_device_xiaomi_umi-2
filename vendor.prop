@@ -113,9 +113,6 @@ camera.disable_zsl_mode=true
 persist.camera.gyro.disable=0
 vendor.camera.aux.packagelist=org.lineageos.snap,org.codeaurora.snapcam
 
-# CNE
-persist.vendor.cne.feature=1
-
 # Crypto
 ro.crypto.allow_encrypt_override=true
 ro.crypto.volume.filenames_mode=aes-256-cts
@@ -135,7 +132,6 @@ vendor.display.use_layer_ext=0
 vendor.display.use_smooth_motion=0
 
 # DPM
-persist.vendor.dpm.feature=1
 persist.vendor.dpm.loglevel=0
 persist.vendor.dpm.nsrm.bkg.evt=3955
 persist.vendor.dpmhalservice.enable=1
@@ -198,7 +194,6 @@ persist.data.netmgrd.qos.enable=true
 persist.data.wda.enable=true
 persist.rmnet.data.enable=true
 persist.vendor.data.iwlan.enable=true
-persist.vendor.data.mode=concurrent
 ro.vendor.use_data_netmgrd=true
 
 # NFC
@@ -212,18 +207,14 @@ persist.rcs.supported=0
 
 # RIL
 persist.radio.dynamic_sar=false
-persist.radio.multisim.config=dsds
 persist.vendor.radio.5g_mode_pref=1
-persist.vendor.radio.apm_sim_not_pwdn=1
 persist.vendor.radio.atfwd.start=true
 persist.vendor.radio.cdma_cap=true
-persist.vendor.radio.custom_ecc=1
 persist.vendor.radio.data_con_rprt=1
 persist.vendor.radio.data_ltd_sys_ind=1
 persist.vendor.radio.display_mipi=true
 persist.vendor.radio.dynamic_sar=1
 persist.vendor.radio.enable_temp_dds=true
-persist.vendor.radio.enableadvancedscan=true
 persist.vendor.radio.force_ltd_sys_ind=1
 persist.vendor.radio.force_on_dc=true
 persist.vendor.radio.manual_nw_rej_ct=1
@@ -231,14 +222,10 @@ persist.vendor.radio.moniter_call=true
 persist.vendor.radio.moniter_dds=true
 persist.vendor.radio.moniter_main=true
 persist.vendor.radio.moniter_screen=true
-persist.vendor.radio.procedure_bytes=SKIP
-persist.vendor.radio.rat_on=combine
 persist.vendor.radio.redir_party_num=1
-persist.vendor.radio.sib16_support=1
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.telephony.default_cdma_sub=0
 ro.vendor.radio.5g=3
-telephony.lteOnCdmaDevice=1
 
 # WiFi Display
 persist.debug.wfd.enable=1
