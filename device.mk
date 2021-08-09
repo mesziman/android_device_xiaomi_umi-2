@@ -328,18 +328,15 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.sensor.pickup=xiaomi.sensor.pickup \
     ro.sensor.proximity=true
 
-# Perf
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.perf@2.2.vendor
-
 # QMI
 PRODUCT_PACKAGES += \
-    libjson
-
-# QTI
-PRODUCT_PACKAGES += \
+    libjson \
     libqti_vndfwk_detect.vendor \
     libvndfwk_detect_jni.qti.vendor
+
+# QTI
+TARGET_COMMON_QTI_COMPONENTS := \
+    perf
 
 # Ramdisk
 PRODUCT_PACKAGES += \
