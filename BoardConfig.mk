@@ -45,9 +45,6 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8250
 KERNEL_DEFCONFIG := vendor/umi_defconfig
 
-# Platform
-TARGET_BOARD_PLATFORM := kona
-
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
