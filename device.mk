@@ -18,8 +18,9 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(LOCAL_PATH)/overlay/packages/apps/CarrierConfig
+
+PRODUCT_PACKAGES += \
+    WifiResTarget
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -330,6 +331,7 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 
 # QTI
 TARGET_COMMON_QTI_COMPONENTS := \
+    overlay \
     perf \
     telephony
 
@@ -403,7 +405,6 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     vendor.qti.hardware.wifi.hostapd@1.2.vendor \
     vendor.qti.hardware.wifi.supplicant@2.2.vendor \
-    WifiResCommon \
     wpa_supplicant \
     wpa_supplicant.conf
 
