@@ -317,9 +317,13 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
-# Parts
+# Paranoid Doze
 PRODUCT_PACKAGES += \
-    XiaomiParts
+    ParanoidDoze
+
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.sensor.pickup=xiaomi.sensor.pickup \
+    ro.sensor.proximity=true
 
 # Perf
 PRODUCT_PACKAGES += \
