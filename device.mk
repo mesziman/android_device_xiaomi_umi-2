@@ -62,10 +62,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
 
-# AID/fs configs
-PRODUCT_PACKAGES += \
-    fs_config_files
-
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService-Soong
